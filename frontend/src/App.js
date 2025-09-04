@@ -3,6 +3,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import Exam from "./components/Exam";
+import Result from "./components/Result";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/exam" element={<Exam />} />
+        <Route path="/result/:id" element={<Result />} /> 
       </Routes>
     </Router>
   );

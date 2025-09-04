@@ -78,7 +78,7 @@ router.post("/submit", authMiddleware, async (req, res) => {
     await result.save();
 
     res.status(201).json({
-      message: "Exam submitted successfully. Results will be available after 24 hours.",
+      message: "Exam submitted successfully. Results will be available after 2 mins.",
       resultId: result._id
     });
   } catch (err) {

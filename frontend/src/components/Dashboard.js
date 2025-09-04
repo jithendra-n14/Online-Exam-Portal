@@ -1,4 +1,4 @@
-// src/Dashboard.js
+// src/components/Dashboard.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -12,9 +12,18 @@ function Dashboard() {
     navigate("/exam", { state: { topic, difficulty } });
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // clear JWT
+    navigate("/"); // redirect to login
+  };
+
   return (
     <div style={{ padding: "20px" }}>
       <h1>Dashboard</h1>
+      <button onClick={handleLogout} style={{ marginBottom: "20px" }}>
+        Logout
+      </button>
+
       <p>Select a topic and difficulty to start your exam.</p>
 
       {topics.map((topic) => (
